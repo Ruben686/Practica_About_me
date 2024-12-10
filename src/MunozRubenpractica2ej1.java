@@ -1,22 +1,23 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
 
 public class MunozRubenpractica2ej1 {
-    //Creamos atributos privados para mantener la integridad de la clase
-    private String name;//nombre del perfil
-    private String story;//historia del perfil
-    private String[] hobbies; // Array de hobbies ya que al contrario que los otros habrá mas de 1
-    private String[] foods; //Array comidas
-    private String[] funFacts;//Array datos curiosos
+    // Atributos privados para mantener la integridad de la clase
+    private String name; // Nombre del perfil
+    private String story; // Historia del perfil
+    private String[] hobbies; // Array de hobbies
+    private String[] foods; // Array de comidas
+    private String[] funFacts; // Array de datos curiosos
 
+    // Constructor para inicializar los atributos del perfil
     public MunozRubenpractica2ej1(String name, String story, String[] hobbies, String[] foods, String[] funFacts) {
-        this.name = name;         // Asigna el nombre al atributo
-        this.story = story;       // Asigna la historia al atributo
-        this.hobbies = hobbies;   // Asigna los hobbies
-        this.foods = foods;       // Asigna las comidas favoritas
-        this.funFacts = funFacts; // Asigna los datos curiosos
+        this.name = name;
+        this.story = story;
+        this.hobbies = hobbies;
+        this.foods = foods;
+        this.funFacts = funFacts;
     }
-    // Métodos getter para obtener cada atributo del perfil.
+
+    // Métodos getter para obtener cada atributo del perfil
     public String getName() {
         return name;
     }
@@ -36,25 +37,43 @@ public class MunozRubenpractica2ej1 {
     public String[] getFunFacts() {
         return funFacts;
     }
-    // Métodos para mostrar información formateada
-    //Formatea la lista de hobbies en un String legible
+
+    // Formateamos la lista de hobbies en un String legible
     public String formatHobbies() {
         StringBuilder hobbiesFormatted = new StringBuilder("Hobbies:\n");
-        for (String hobby : hobbies) { //Itera sobre cada hobby
+        for (String hobby : hobbies) { // Itera sobre cada hobby
             hobbiesFormatted.append("- ").append(hobby).append("\n");
         }
-        return hobbiesFormatted.toString();//Devuelve el resultado
+        return hobbiesFormatted.toString(); // Devuelve el resultado
     }
 
+    // Formateamos la lista de comidas favoritas en un String legible
     public String formatFoods() {
         StringBuilder foodsFormatted = new StringBuilder("Comidas favoritas:\n");
-        for (String food : foods) { //Itera sobre cada comida
+        for (String food : foods) { // Itera sobre cada comida
             foodsFormatted.append("- ").append(food).append("\n");
         }
-        return foodsFormatted.toString();//Devuelve el resultado
+        return foodsFormatted.toString(); // Devuelve el resultado
     }
-     public String getRandomFunFact() {
+
+    // Añadimos una selección aleatoria para uno de los datos curiosos
+    public String getRandomFunFact() {
         int index = (int) (Math.random() * funFacts.length); // Genera un índice aleatorio
         return funFacts[index]; // Devuelve el dato curioso en el índice generado
+    }
+
+    public static void main(String[] args) {
+        // Datos de ejemplo para el perfil
+        String[] hobbies = {"🎨 Pintar", "📖 Leer", "🎮 Jugar videojuegos"};
+        String[] foods = {"🍕 Pizza", "🍣 Sushi", "🍫 Chocolate"};
+        String[] funFacts = {"Soy ambidiestro.", "He viajado a 10 países.", "Tengo un gato llamado Luna."};
+
+        // Crear una instancia de la clase con los datos de ejemplo
+        MunozRubenpractica2ej1 perfil = new MunozRubenpractica2ej1(
+                "Juan Pérez",
+                "Soy un apasionado por la tecnología y el arte. Me encanta explorar nuevos mundos a través de los libros y los videojuegos.",
+                hobbies, foods, funFacts
+        );
+
     }
 }
