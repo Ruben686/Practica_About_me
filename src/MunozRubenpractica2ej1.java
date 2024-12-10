@@ -69,7 +69,7 @@ public class MunozRubenpractica2ej1 {
         String[] foods = {"🍕 Pizza", "🍣 Sushi", "🍫 Chocolate"};
         String[] funFacts = {"Soy ambidiestro.", "He viajado a 10 países.", "Tengo un gato llamado Luna."};
 
-        // Crear una instancia de la clase con los datos de ejemplo
+        // Creamos una instancia de la clase con los datos de ejemplo
         MunozRubenpractica2ej1 perfil = new MunozRubenpractica2ej1(
                 "Juan Pérez",
                 "Soy un apasionado por la tecnología y el arte. Me encanta explorar nuevos mundos a través de los libros y los videojuegos.",
@@ -89,7 +89,7 @@ public class MunozRubenpractica2ej1 {
             System.out.println("[4] Salir");
             System.out.print("Selecciona una opción: ");
 
-            // Validar entrada del usuario (manejo de errores)
+            // Validaremos la entrada del usuario (manejo de errores)
             while (!scanner.hasNextInt()) { // Si la entrada no es un número entero
                 System.out.println("Opción no válida. Intenta de nuevo."); // Mensaje de error
                 scanner.next(); // Descarta la entrada inválida
@@ -97,7 +97,7 @@ public class MunozRubenpractica2ej1 {
 
             option = scanner.nextInt(); // Lee la opción seleccionada
 
-            // Estructura de control para manejar las opciones
+            // Creación del menu para manejar las opciones
             switch (option) {
                 case 1: // Mostrar la historia
                     System.out.println("\nStory:");
@@ -119,8 +119,8 @@ public class MunozRubenpractica2ej1 {
                     System.out.println("Opción no válida. Intenta de nuevo.");
             }
             System.out.println(); // Salto de línea para separar las opciones
-        } while (option != 4); // El ciclo se repite mientras el usuario no elija salir
+        } while (option != 4); //  ciclo se repite mientras el usuario no elija salir
 
-        scanner.close(); // Cierra el Scanner para liberar recursos
+
     }
 }
