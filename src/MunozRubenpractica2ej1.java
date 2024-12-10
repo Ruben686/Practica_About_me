@@ -36,5 +36,25 @@ public class MunozRubenpractica2ej1 {
     public String[] getFunFacts() {
         return funFacts;
     }
+    // Métodos para mostrar información formateada
+    //Formatea la lista de hobbies en un String legible
+    public String formatHobbies() {
+        StringBuilder hobbiesFormatted = new StringBuilder("Hobbies:\n");
+        for (String hobby : hobbies) { //Itera sobre cada hobby
+            hobbiesFormatted.append("- ").append(hobby).append("\n");
+        }
+        return hobbiesFormatted.toString();//Devuelve el resultado
+    }
 
+    public String formatFoods() {
+        StringBuilder foodsFormatted = new StringBuilder("Comidas favoritas:\n");
+        for (String food : foods) { //Itera sobre cada comida
+            foodsFormatted.append("- ").append(food).append("\n");
+        }
+        return foodsFormatted.toString();//Devuelve el resultado
+    }
+     public String getRandomFunFact() {
+        int index = (int) (Math.random() * funFacts.length); // Genera un índice aleatorio
+        return funFacts[index]; // Devuelve el dato curioso en el índice generado
+    }
 }
